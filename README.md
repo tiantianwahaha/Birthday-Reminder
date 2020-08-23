@@ -8,14 +8,13 @@
 ------
 
 #### 1.Github配置
-
 Settings-Secrets-New secret
 
 **Name: PUSH_KEY**
 
 Value: 你自己的 server 酱 SCKEY
 
-**Name: PUSH_KEY**
+**Name: DATA**
 
 Value: 你自己的 生日数据 列表
 
