@@ -1,7 +1,8 @@
 name: 'GitHub Actions Birthday Reminder'
 
 on:
-  push:
+  push:	
+    branches: [ master ]
   schedule:
     - cron: '0 23 * * *'
 
