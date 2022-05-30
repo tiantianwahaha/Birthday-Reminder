@@ -1,7 +1,6 @@
 # Birthday-Reminder
 ## 阴历生日自动提醒服务
 
-
 **Lunar birthday reminder (GitHub Actions + 企业微信推送)**
 
 **每天早上7点自动发微信提醒**
