@@ -1,7 +1,7 @@
 # Birthday-Reminder
 ## 阴历生日自动提醒服务
 
-**Lunar birthday reminder (GitHub Actions + server酱微信推送)**
+**Lunar birthday reminder (GitHub Actions + 企业微信推送)**
 
 **每天早上7点自动发微信提醒**
 
@@ -10,9 +10,17 @@
 #### 1.Github配置
 Settings-Secrets-New secret
 
-**Name: PUSH_KEY**
+**Name: CORPID**
 
-Value: 你自己的 server 酱 SCKEY
+Value: 你自己的企业微信 企业ID corpid 
+
+**Name: SECRET**
+
+Value: 你自己的企业微信corpsecret 
+
+**Name: AGENTID**
+
+Value: 你自己的企业微信agentid
 
 **Name: DATA**
 
