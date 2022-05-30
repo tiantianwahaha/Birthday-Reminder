@@ -1,10 +1,9 @@
-var request = require('request');
+const notify = require('./sendNotify.js');
 // 公共变量
 let DATA = process.env.DATA;
 DATA = JSON.parse(DATA);
-const SCKEY = process.env.PUSH_KEY;
 
-var current_time = new Date()
+var current_time = new Date((new Date()).toLocaleDateString())
 var current_year = current_time.getFullYear();
 //var current_month = current_time.getMonth() + 1;
 //var current_day = current_time.getDate();
@@ -13,7 +12,7 @@ var current_year = current_time.getFullYear();
 main函数
 *********************/
 
-function main() {
+async function main() {
     for (let item of DATA.birthday) {
         let name = item.name;
         let birth = item.birth;
@@ -28,51 +27,11 @@ function main() {
             let text = `${current_time.toLocaleDateString()}有生日提醒`
             let desp = `${name}${x.toLocaleDateString()}(${days}天后)过${how_old}岁生日`
             console.log(text)
-            send2wx(text, desp)
+            await notify.send2wx(text, desp)
         }
 
     }
 }
-
-
-/*
-***************************
-server酱接受推送
-***************************
-*/
-
-function send2wx(text, desp = '') {
-    return new Promise(resolve => {
-        //let str =encodeURIComponent(message);
-        const options = {
-            url: `https://sc.ftqq.com/${SCKEY}.send`,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: `text=${text}&desp=${desp}`
-        }
-        request.post(options, function (error, response, data) {
-            try {
-                if (error) {
-                    console.log('发送通知调用API失败！！')
-                } else {
-                    data = JSON.parse(data);
-                    if (data.errno === 0) {
-                        console.log('微信通知发送成功')
-                    } else if (data.errno === 1024) {
-                        console.log('PUSH_KEY 错误')
-                    }
-                }
-            }
-            catch (error) {
-                console.log(error)
-            } finally {
-                resolve()
-            }
-        });
-    })
-}
-
 
 /*
 ***************************
@@ -237,7 +196,6 @@ function decode(year_code) {
     }
     return month_days
 }
-
 
 
 main()
