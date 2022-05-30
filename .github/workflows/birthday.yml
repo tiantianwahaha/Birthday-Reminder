@@ -19,4 +19,6 @@ jobs:
         run: node birthday.js
         env:
           DATA: ${{ secrets.DATA }}
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          CORPID: ${{ secrets.CORPID }}
+          SECRET: ${{ secrets.SECRET }}
+          AGENTID: ${{ secrets.AGENTID }}
