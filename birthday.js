@@ -16,9 +16,15 @@ async function main() {
     for (let item of DATA.birthday) {
         let name = item.name;
         let birth = item.birth;
-        let solar = lunar2solar(current_year, Number(birth.split('-')[1]), Number(birth.split('-')[2]));
         let how_old = current_year - Number(birth.split('-')[0]);
-        let x = new Date(solar);
+        if (!item.flag) {
+            let solar = lunar2solar(current_year, Number(birth.split('-')[1]), Number(birth.split('-')[2]));
+            var x = new Date(solar);
+        }
+        else {
+            let strTime = current_year + "/" + birth.split('-')[1] + "/" + birth.split('-')[2];
+            var x = new Date(Date.parse(strTime));
+        }        
         if ((x - current_time) < 0) {
             continue;
         }
