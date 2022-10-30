@@ -1,9 +1,0 @@
-{
-  "name": "Birthday-Reminder",
-  "version": "1.0.0",
-  "main": "birthday.js",
-  "license": "MIT",
-  "dependencies": {
-    "request": "^2.88.2"
-  }
-}
