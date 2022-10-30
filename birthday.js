@@ -2,7 +2,7 @@ const notify = require('./sendNotify.js');
 // 公共变量
 let DATA = process.env.DATA;
 DATA = JSON.parse(DATA);
-
+conslole.log('hello word')
 var current_time = new Date((new Date()).toLocaleDateString())
 var current_year = current_time.getFullYear();
 //var current_month = current_time.getMonth() + 1;
