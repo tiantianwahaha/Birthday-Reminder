@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 16
       - name: 'Install NPM dependencies'
-        run: npm install
+        run: npm install request
       - name: 'Run code'
         run: node birthday.js
         env:
