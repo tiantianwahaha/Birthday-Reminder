@@ -81,6 +81,7 @@ def main():
             result=ZhDate.to_datetime(lunar).date()
         #判断是否要过生日了
         flag = (result - current_time).days
+        print(flag)
         if (flag < 0):
             # print("生日已经过了：{}".format(item))
             continue
