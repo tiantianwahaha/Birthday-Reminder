@@ -64,7 +64,7 @@ class WXPusher:
         return data
 
 def main():
-    for item in DATA:
+    for item in eval(DATA):
         name = item["name"]
         birth = item["birth"]
         year, month, day = birth.split('-')
