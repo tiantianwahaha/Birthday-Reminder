@@ -3,13 +3,14 @@ from zhdate import ZhDate
 import datetime
 import requests
 import json
+import os
 
 
 #DATA = [{ "name": "张三", "solar":1,"birth": "1988-09-12" },{ "name": "李四", "birth": "1999-10-09" }]
-corpid=process.env.CORPID
-corpsecret=process.env.SECRET
-agentid=process.env.AGENTID
-DATA = process.env.DATA
+corpid=os.environ["CORPID"]
+corpsecret=os.environ["SECRET"]
+agentid=os.environ["AGENTID"]
+DATA = os.environ["DATA"]
 
 current_time = datetime.date.today()
 current_year = datetime.date.today().year
