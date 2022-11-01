@@ -85,12 +85,11 @@ def main():
         if (flag < 0):
             # print("生日已经过了：{}".format(item))
             continue
-        elif (flag < 3):
+        elif (flag <= 3):
             titl = "{}有生日提醒".format(current_time)
             desp = "{}{}({}天后)过{}岁生日".format(name,result,flag,how_old)
-            # print(titl,desp)
-            #send = WXPusher(corpid=corpid, corpsecret=corpsecret , agentid=agentid, title=titl, description=desp)
-            #send.send_message()
+            send = WXPusher(corpid=corpid, corpsecret=corpsecret , agentid=agentid, title=titl, description=desp)
+            send.send_message()
         #else:
             # print("还不到生日：{}".format(item))
 
