@@ -4,7 +4,7 @@
 **Lunar birthday reminder (GitHub Actions + 企业微信推送)**
 
 
-**每天早上8点1分自动发微信提醒**
+**提前三天，每天凌晨0点1分自动发微信提醒**
 
 ------
 
