@@ -39,12 +39,12 @@ class WXPusher:
         return access_token
 
     def send_message(self):
-        data = self.get_message()
         req_urls = self.req_url + self.get_access_token()
+        data = self.get_message(req_urls)
         res = requests.post(url=req_urls, data=data)
         print(res.text)
 
-    def get_message(self):
+    def get_message(self, req_urls):
         data = {
             "touser": self.usr,
             "toparty": "@all",
@@ -53,7 +53,8 @@ class WXPusher:
             "agentid": self.agentid,
             "textcard": {
                 "title": self.title,
-                "description": self.description
+                "description": self.description,
+                "url": req_urls
             },
             "safe": 0,
             "enable_id_trans": 0,
