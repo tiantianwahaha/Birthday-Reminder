@@ -44,7 +44,7 @@ class WXPusher:
         res = requests.post(url=req_urls, data=data)
         # print(res.text)
 
-    def get_message(self, req_urls):
+    def get_message(self):
         data = {
             "touser": self.usr,
             "toparty": "@all",
