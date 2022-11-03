@@ -40,7 +40,7 @@ class WXPusher:
 
     def send_message(self):
         req_urls = self.req_url + self.get_access_token()
-        data = self.get_message(req_urls)
+        data = self.get_message()
         res = requests.post(url=req_urls, data=data)
         print(res.text)
 
@@ -54,7 +54,7 @@ class WXPusher:
             "textcard": {
                 "title": self.title,
                 "description": self.description,
-                "url": req_urls
+                "url": "https://tiantianwahaha.github.io/"
             },
             "safe": 0,
             "enable_id_trans": 0,
