@@ -42,7 +42,7 @@ class WXPusher:
         req_urls = self.req_url + self.get_access_token()
         data = self.get_message()
         res = requests.post(url=req_urls, data=data)
-        print(res.text)
+        # print(res.text)
 
     def get_message(self, req_urls):
         data = {
