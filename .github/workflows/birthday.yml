@@ -1,11 +1,11 @@
-名字: 'GitHub Actions Birthday Reminder'
+name: 'GitHub Actions Birthday Reminder'
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
-分支:[“master”]
-时间表:
+    branches: [ "master" ]
+  schedule:
     - cron: '1 0 * * *'
 
 jobs:
