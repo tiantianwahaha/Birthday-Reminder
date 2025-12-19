@@ -54,7 +54,7 @@ class WXPusher:
             "textcard": {
                 "title": self.title,
                 "description": self.description,
-                "url": "https://tiantianwahaha.github.io/"
+                "url": "www.baidu.com"
             },
             "safe": 0,
             "enable_id_trans": 0,
@@ -96,3 +96,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
